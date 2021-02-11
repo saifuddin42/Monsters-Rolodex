@@ -2,13 +2,15 @@
 import React from "react";
 import "./App.css";
 
+import { CardList } from "./components/card-list/card-list.component";
+
 // class App extends Component {
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      monsters: []
+      monsters: [],
     };
   }
 
@@ -19,18 +21,19 @@ class App extends React.Component {
   // }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(users => this.setState({monsters: users})) // gets the users from the url, converts to json then sets state
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((users) => this.setState({ monsters: users })); // gets the users from the url, converts to json then sets state
   }
 
   render() {
     return (
       <div className="App">
-        {
-          this.state.monsters.map(monsters => (
-          <h1 key = {monsters.id}> {monsters.username} </h1>))
-        }
+        <CardList name="Saif">
+          {this.state.monsters.map(monster => (
+            <h1 key={monster.id}> {monster.name} </h1>
+          ))}
+        </CardList>
       </div>
     );
   }
