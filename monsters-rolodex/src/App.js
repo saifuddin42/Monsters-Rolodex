@@ -1,48 +1,27 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+// import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-class App extends Component {
+// class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      monsters: [
-        {
-          name: 'Frankenstein', 
-          id: 'no1'
-        },
-        {
-          name: 'Dracula', 
-          id: 'no2'
-        },
-        {
-          name: 'Zombie', 
-          id: 'no3'
-        },
-      ]
+      monsters: []
     };
+  }
+
+  // componentDidMount() {
+  //   fetch('https://jsonplaceholder.typicode.com/users')
+  //   .then(response => response.json())
+  //   .then(users => console.log(users)) // gets the users from the url, converts to json then logs in the console
+  // }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => this.setState({monsters: users})) // gets the users from the url, converts to json then sets state
   }
 
   render() {
@@ -50,7 +29,7 @@ class App extends Component {
       <div className="App">
         {
           this.state.monsters.map(monsters => (
-          <h1 key = {monsters.id}> {monsters.name} </h1>))
+          <h1 key = {monsters.id}> {monsters.username} </h1>))
         }
       </div>
     );
