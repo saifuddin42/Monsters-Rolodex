@@ -28,6 +28,10 @@ class App extends React.Component {
       .then((users) => this.setState({ monsters: users })); // gets the users from the url, converts to json then sets state
   }
 
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value });
+  };
+
   render() {
     //const monsters = this.state.monsters;
     //const searchField = this.state.searchField;
@@ -60,7 +64,7 @@ class App extends React.Component {
         /> */}
         <SearchBox
           placeholder="Search Monsters"
-          handleChange={(e) => this.setState({ searchField: e.target.value })}
+          handleChange={this.handleChange}
         />
         <CardList monsters={filteredMonsters} />
       </div>
