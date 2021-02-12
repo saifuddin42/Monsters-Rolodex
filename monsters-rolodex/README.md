@@ -1,6 +1,7 @@
 # Monsters Rolodex
 
 This is a basic ReactJS app implementing component functionalites and unidirectional data flow using state and props.
+This is the link to view the project: https://saifuddin42.github.io/Monsters-Rolodex/
 
 ## Getting Started with Monsters-Rolodex
 
