@@ -1,4 +1,8 @@
-# Getting Started with Monsters-Rolodex
+# Monsters Rolodex
+
+I This is a basic ReactJS app implementing component functionalites and unidirectional data flow using state and props.
+
+## Getting Started with Monsters-Rolodex
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
